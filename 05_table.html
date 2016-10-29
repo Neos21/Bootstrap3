@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Table</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      #toggles {
+        margin-top:15px;
+        margin-bottom:15px;
+      }
+      
+      #toggles li:not(:last-child) {
+        padding-bottom:5px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <div class="container" id="toggles">
+      <ul>
+        <li><input type="button" id="toggle-table"     class="btn btn-info" value="Toggle .table"></li>
+        <li><input type="button" id="toggle-striped"   class="btn btn-info" value="Toggle .table-striped"></li>
+        <li><input type="button" id="toggle-bordered"  class="btn btn-info" value="Toggle .table-bordered"></li>
+        <li><input type="button" id="toggle-hover"     class="btn btn-info" value="Toggle .table-hover"></li>
+        <li><input type="button" id="toggle-condensed" class="btn btn-info" value="Toggle .table-condensed"></li>
+      </ul>
+    </div>
+    
+    <div class="container">
+      <table id="sample">
+        <thead>
+          <tr><th>ID</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>hoge</td><td>200</td></tr>
+          <tr><td>fuga</td><td>300</td></tr>
+          <tr><td>foo</td><td>240</td></tr>
+          <tr><td>bar</td><td>180</td></tr>
+          <tr><td>piyo</td><td>900</td></tr>
+        </tbody>
+      </table>
+      <table id="colours" class="table table-hover">
+        <thead>
+          <tr><th>Theme</th><th>Colour</th></tr>
+        </thead>
+        <tbody>
+          <tr class="active"><td>active</td><td>200</td></tr>
+          <tr class="success"><td>success</td><td>300</td></tr>
+          <tr class="info"><td>info</td><td>240</td></tr>
+          <tr class="warning"><td>warning</td><td>180</td></tr>
+          <tr class="danger"><td>danger</td><td>900</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!--
+      Table レイアウト
+      
+      - table に .table を付与した状態が通常パターン。
+      - .table-striped で奇数行に色が付く (:nth-child() を使用)。
+      - .table-bordered で枠線。
+      - .table-hover でマウスホバー時に背景色を付ける。
+      - .table-condensed で狭めのテーブルを作れる。
+      - .active・.success・.info・.warning・.danger あたりでテーブルに色を付けられる。
+        .table-hover 時の色も用意されていたりして芸が細かい…。
+    -->
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $(function() {
+        $("#toggle-table")    .on("click", function() { $("#sample").toggleClass("table");           $(this).toggleClass("btn-info btn-success"); });
+        $("#toggle-striped")  .on("click", function() { $("#sample").toggleClass("table-striped");   $(this).toggleClass("btn-info btn-success"); });
+        $("#toggle-bordered") .on("click", function() { $("#sample").toggleClass("table-bordered");  $(this).toggleClass("btn-info btn-success"); });
+        $("#toggle-hover")    .on("click", function() { $("#sample").toggleClass("table-hover");     $(this).toggleClass("btn-info btn-success"); });
+        $("#toggle-condensed").on("click", function() { $("#sample").toggleClass("table-condensed"); $(this).toggleClass("btn-info btn-success"); });
+      });
+    </script>
+    
+  </body>
+</html>
