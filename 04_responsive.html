@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Responsive</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      /* 軽くパディング */
+      #header,
+      #body > .row > div,
+      #footer {
+        padding-top:5rem;
+        padding-bottom:5rem;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <div id="header" style="background:pink;">
+      Header
+    </div>
+    
+    <div id="body">
+      <div class="row">
+        <div class="col-sm-3 hidden-xs" style="background:gray;">
+          Side 1
+        </div>
+        <div class="col-sm-6 col-xs-6" style="background:green;">
+          Side 2
+        </div>
+        <div class="col-sm-3 col-xs-6" style="background:orange;">
+          Side 3
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer" style="background:skyblue;">
+      Footer
+    </div>
+    
+    <!--
+      レスポンシブデザイン
+      
+      - Grid システムで用意されているデバイス幅に応じた設定を併用することで、レスポンシブデザインが可能になる。
+      - ウィンドウ幅がそれなりにある場合は .col-sm-* の指定が有効になるが、
+        ウィンドウ幅が狭くなると .col-xs-* の指定が有効になる。
+        (Media Queries の指定が準備されているということ)
+      - .hidden-* や visible-* というクラスもあり、ウィンドウ幅に応じて表示・非表示を切り替えられる。
+      - 上記サンプルはウィンドウ幅を狭めると Side 1 が非表示になり、
+        Side 2 と Side 3 が 50% ずつで表示されるようになる。
+    -->
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
