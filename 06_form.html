@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      /* Bootstrap のクラスを上書きすると分かりづらくなるので本当はやめるべき。別に独自のクラスを付与してそちらで制御するとよろし。 */
+      .container:not(:first-child) {
+        margin-top:15px;
+        border-top:1px solid #999;
+        padding-top:15px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Form レイアウト
+      
+      - form 内に .form-group を作ってレイアウトしていく。
+      - label は .control-label を付与。
+      - テキストボックスには .form-control を付与。
+      - 注釈は .help-block で書いておく。
+      - .form-group に .has-error を与えると囲んだフォーム部品を赤くしたりできる。
+        例では「@」を含まない文字列が入った場合に入力チェックエラーっぽく動くようにした。
+      - ちなみに input[type="text"] に .input-sm 付与でテキストボックスが少し小さくなる。
+    -->
+    <div class="container">
+      <form>
+        <div class="form-group" id="email-box">
+          <label class="control-label" for="email">E-Mail</label>
+          <input type="text" id="email" class="form-control" placeholder="E-Mail">
+          <span class="help-block">※ 必ず「<code>@</code>」を含んでください。</span>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+      </form>
+    </div>
+    
+    <!-- .form-inline で .form-group を横並びにする。.sr-only は Screen Reader (音声読み上げソフト) Only の意味。 -->
+    <div class="container">
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only control-label" for="email2">E-Mail</label>
+          <input type="text" id="email2" class="form-control" placeholder="E-Mail">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+      </form>
+    </div>
+    
+    <!-- .form-horizontal は .form-group が .row と同じ意味になるので、この中で Grid システムレイアウトが可能になる。ラベルとフォーム部品が並ぶ -->
+    <div class="container">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email3">E-Mail</label>
+          <div class="col-sm-4">
+            <input type="text" id="email3" class="form-control" placeholder="E-Mail">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="name">Name</label>
+          <div class="col-sm-4">
+            <input type="text" id="name" class="form-control" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-4">
+            <input type="submit" value="Submit" class="btn btn-primary">
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $(function() {
+        // 簡易入力チェック。
+        $("#email").on("blur", function() {
+          var val = $(this).val();
+          if(!val || val.match(/@/)) {
+            $("#email-box").removeClass("has-error");
+          }
+          else {
+            $("#email-box").addClass("has-error");
+          }
+        });
+      });
+    </script>
+    
+  </body>
+</html>
