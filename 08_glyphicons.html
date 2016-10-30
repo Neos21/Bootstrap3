@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Glyphicons</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Glyphicons
+      
+      - 空の i 要素に .glyphicon と用意されているクラス名を付与することでアイコンが表示できる。
+        - スタイル定義上は i 要素である必要はない。
+        - 付与したクラスが ::before 疑似要素に特定の文字コードを追加しているだけなので、
+          同じ実体参照文字列を入れてやると同じアイコンを表示させられる。
+      - Glyphicons Halflings というフォントファイルを読み込む必要あり。
+      
+      Button Group
+      
+      - .btn-group で .btn 要素を囲むとボタンをグループ化できる。
+    -->
+    <div class="container">
+      <p><i class="glyphicon glyphicon-book"></i> Book</p>
+      <p><i class="glyphicon glyphicon-book">&#xE043;</i> Book</p>
+      <p><button class="btn btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i> Push Me!</button></p>
+      
+      <div class="btn-group">
+        <button class="btn btn-danger"><i class="glyphicon glyphicon-heart"></i> Push Me!</button>
+        <button class="btn btn-warning"><i class="glyphicon glyphicon-star"></i> Push Me!</button>
+        <button class="btn btn-success"><i class="glyphicon glyphicon-download-alt"></i> Push Me!</button>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
