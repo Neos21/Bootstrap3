@@ -26,8 +26,7 @@
       - label は .control-label を付与。
       - テキストボックスには .form-control を付与。
       - 注釈は .help-block で書いておく。
-      - .form-group に .has-error を与えると囲んだフォーム部品を赤くしたりできる。
-        例では「@」を含まない文字列が入った場合に入力チェックエラーっぽく動くようにした。
+      - .form-group に .has-warning や .has-error を与えると囲んだフォーム部品に色を付けられる。
       - ちなみに input[type="text"] に .input-sm 付与でテキストボックスが少し小さくなる。
     -->
     <div class="container">
@@ -84,14 +83,26 @@
     
     <script>
       $(function() {
-        // 簡易入力チェック。
+        // 簡易入力チェック
         $("#email").on("blur", function() {
           var val = $(this).val();
-          if(!val || val.match(/@/)) {
-            $("#email-box").removeClass("has-error");
+          if(val.match(/@/)) {
+            // @ が含まれていれば Success (緑色)
+            $("#email-box")
+              .removeClass("has-warning has-error")
+              .addClass("has-success");
+          }
+          else if(!val) {
+            // 空欄時に Warning (黄色)
+            $("#email-box")
+              .removeClass("has-success has-error")
+              .addClass("has-warning");
           }
           else {
-            $("#email-box").addClass("has-error");
+            // 空欄でなく @ がなければ Error (赤色)
+            $("#email-box")
+              .removeClass("has-success has-warning")
+              .addClass("has-error");
           }
         });
       });
