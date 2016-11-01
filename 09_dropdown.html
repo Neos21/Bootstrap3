@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Dropdown</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Dropdown メニュー
+      
+      - ドロップダウンメニューの構成物全体を .btn-group で囲む。
+      - a 要素や button 要素でメニューを開くボタンを作る。.dropdown-toggle クラスと、
+        JavaScript でドロップダウン制御をさせるための data-toggle="dropdown" を付与する。
+      - .caret で下矢印が出せる。
+      - .btn-group で囲んでいるので、.caret のみのボタンと分けて作ることも可能。
+      - .dropdown-menu で囲んだ中身がドロップダウンとして表示される。
+      - .dropdown-header でメニュー項目を作ったり、
+        .divider で区切り線を作ったり、
+        .disabled で非活性っぽく見せてみたり。
+    -->
+    <div class="container">
+      <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Action <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action 1</a></li>
+          <li><a href="#">Action 2</a></li>
+          <li><a href="#">Action 3</a></li>
+        </ul>
+      </div>
+      
+      <div class="btn-group">
+        <button class="btn btn-primary">
+          Action
+        </button>
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Header</li>
+          <li><a href="#">Action 1</a></li>
+          <li class="disabled"><a href="#">Action 2</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Action 3</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
