@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Breadcrumb Pagination Pager</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Breadcrumb
+      
+      - パンくずリスト。ul 要素に .breadcrumb でできあがり。
+      - 現在地は .active を付与しておくと少しグレーにしてくれる。
+    -->
+    <div class="container">
+      <h2>Breadcrumb</h2>
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li class="active">Neo</li>
+      </ul>
+    </div>
+    
+    <!--
+      Pagination
+      
+      - ページネーション。ul 要素に .pagination でできあがり。
+      - 現在地は .active、非活性にしたいところは .disabled。
+    -->
+    <div class="container">
+      <h2>Pagination</h2>
+      <ul class="pagination">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </div>
+    
+    <!--
+      Pager
+      
+      - ページャ。ul 要素に .pager を付与する。
+      - .previous が左端、.next が右端に配置される。それ以外に li 要素を置いても問題ないみたい。
+    -->
+    <div class="container">
+      <h2>Pager</h2>
+      <ul class="pager">
+        <li class="previous"><a href="#">&laquo; 前へ</a></li>
+        <li class="next"><a href="#">次へ &raquo;</a></li>
+      </ul>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
