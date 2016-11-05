@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Navbar</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      .container {
+        margin-top:51px;
+        margin-bottom:51px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Navbar
+      
+      - .navbar を付与する。
+      - .navbar-default や .navbar-inverse でデザイン指定。
+      - .navbar-fixed-top や .navbar-fixed-bottom で上部または下部に固定できる。
+        - .navbar は高さが 50px (さらに border で 1px？) あり、余白調整をしてやらないと後続要素が隠れてしまう。
+          このサンプルでは .container の上下に 51px ずつ margin を指定している。これでちょうど要素が重ならない状態。
+      - .navbar-header に .navbar-brand でタイトルっぽく。
+      - .navbar-nav でナビゲーション。
+      - .navbar-right で右側に配置できる。
+    -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Neo's World</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </nav>
+    
+    <div class="container">
+      <div class="btn-group">
+        <button class="btn btn-info toggle-design">Toggle Design</button>
+        <button class="btn btn-info toggle-fixed">Toggle Fixed</button>
+      </div>
+      <p style="margin-bottom:100em;">Fixed-Top</p>
+      <p>Fixed-Top</p>
+      <div class="btn-group">
+        <button class="btn btn-info toggle-design">Toggle Design</button>
+        <button class="btn btn-info toggle-fixed">Toggle Fixed</button>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $(function() {
+        // デザインの切替
+        $(".toggle-design").on("click", function() {
+          $("#nav").toggleClass("navbar-default navbar-inverse")
+        });
+        
+        // 固定位置の切替
+        $(".toggle-fixed").on("click", function() {
+          $("#nav").toggleClass("navbar-fixed-top navbar-fixed-bottom")
+        });
+      });
+    </script>
+    
+  </body>
+</html>
