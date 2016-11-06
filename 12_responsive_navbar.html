@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Responsive Navbar</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      .container {
+        margin-top:51px;
+        margin-bottom:51px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      レスポンシブな Navbar
+      
+      - .navbar-toggle というボタンを作る。
+      - data-toggle="collapse" は、要は JavaScript でアコーディオンを実現するために指定するもの。
+        data-target 属性でアコーディオンで開閉するクラスを指定する。
+      - .icon-bar は横線を作る。3つ重ねてハンバーガーメニューを構成させる。
+      - 開閉させる部分には .collapse を指定する。
+      - .collapse で開閉させるメニューのデザインを指定するために .navbar-collapse を併用する。
+      - ウィンドウサイズを縮めるとハンバーガーメニューが登場するレスポンシブデザインができた。
+    -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Neo's World</a>
+      </div>
+      <div class="collapse navbar-collapse target">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <div class="btn-group">
+        <button class="btn btn-info toggle-design">Toggle Design</button>
+        <button class="btn btn-info toggle-fixed">Toggle Fixed</button>
+      </div>
+      <p style="margin-bottom:100em;">Fixed-Top</p>
+      <p>Fixed-Top</p>
+      <div class="btn-group">
+        <button class="btn btn-info toggle-design">Toggle Design</button>
+        <button class="btn btn-info toggle-fixed">Toggle Fixed</button>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $(function() {
+        // デザインの切替
+        $(".toggle-design").on("click", function() {
+          $("#nav").toggleClass("navbar-default navbar-inverse")
+        });
+        
+        // 固定位置の切替
+        $(".toggle-fixed").on("click", function() {
+          $("#nav").toggleClass("navbar-fixed-top navbar-fixed-bottom")
+        });
+      });
+    </script>
+    
+  </body>
+</html>
