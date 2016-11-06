@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Label Badge Alert Panel</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Label
+      
+      - ラベル。.label と色指定を付与するとできる。
+      
+      Badge
+      
+      - バッジ。中身がないときは自動的に非表示になる。
+      
+      Alert
+      
+      - アラート。
+      - .close に data-dismiss="alert" を付与したボタンを置いておくとその要素を閉じられる。
+      
+      Panel
+      
+      - パネル。
+      - .panel-heading でタイトル部分、.panel-body で内容部分を構成する。
+    -->
+    <div class="container">
+      <p>Product AAA <span class="label label-danger">NEW!</span></p>
+      
+      <p>Inbox <span class="badge">5</span></p>
+      <p>Inbox <span class="badge"></span></p>
+      
+      <div class="alert alert-success">
+        <button class="close" data-dismiss="alert">&times;あ</button>
+        お知らせ
+      </div>
+      
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          お知らせタイトル
+        </div>
+        <div class="panel-body">
+          お知らせ本文
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
