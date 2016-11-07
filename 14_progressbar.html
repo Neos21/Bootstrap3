@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Progress-Bar</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      /* .progress-bar の transition を無効化するための指定 */
+      .my-progress-bar {
+        -webkit-transition:none !important;
+                transition:none !important;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Progress Bar
+      
+      - .progress の中に .progress-bar を入れて作る。
+      - .progress-bar の width を指定することで進捗率を表現できる。
+      - .progress-striped で縞模様、.active を追加するとアニメーション。
+      - .progress-bar は複数重ねることもできる。
+      - jQuery の .css() で width を動的に変化させると、transition が設定されているため自動的にほんのりアニメーションする。
+      - 逆に jQuery からアニメーションさせたい場合は、.progress-bar の transition を none で上書きしておかないと
+        アニメーションがダブってカクついてしまう。
+        - 参考：http://stackoverflow.com/questions/23575095/animating-bootstrap-progress-bar-width-with-jquery
+    -->
+    <div class="container">
+      <div class="progress">
+        <div class="progress-bar progress-bar-info" style="width:60%;"></div>
+      </div>
+      <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-primary" style="width:60%;">Label.</div>
+      </div>
+      <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-info" style="width:60%;"></div>
+      </div>
+      <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-info" style="width:40%;"></div>
+        <div class="progress-bar progress-bar-primary" style="width:20%;"></div>
+        <div class="progress-bar progress-bar-warning" style="width:15%;"></div>
+      </div>
+      
+      <div class="btn-group">
+        <button id="make-complete" class="btn btn-success">Make Complete</button>
+        <button id="reset" class="btn btn-success">Reset</button>
+      </div>
+      <div class="progress progress-striped active">
+        <div id="progress-bar-1" class="progress-bar progress-bar-success" style="width:0%;"></div>
+      </div>
+      
+      <div class="btn-group">
+        <button id="animate" class="btn btn-danger">Animation Progress</button>
+      </div>
+      <div class="progress progress-striped active">
+        <div id="progress-bar-2" class="progress-bar progress-bar-danger my-progress-bar" style="width:0%;"></div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $(function() {
+        // 100% にする
+        $("#make-complete").on("click", function() {
+          $("#progress-bar-1").css({ "width" : "100%" });
+        });
+        // 0% に戻す
+        $("#reset").on("click", function() {
+          $("#progress-bar-1").css({ "width" : "0%" });
+        });
+        
+        // アニメーションさせてみる
+        $("#animate").on("click", function() {
+          $("#progress-bar-2").animate({ "width" : "70%" }, 2500);
+        });
+      });
+    </script>
+    
+  </body>
+</html>
