@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Modal Window</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      body {
+        padding:20px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Modal Window
+      
+      - モーダルウィンドウを開くリンクは data-toggle="modal" と href="#ID" (もしくは data-target="#ID") で設定する。
+      - モーダルウィンドウを開くリンクでも、.modal にでも、どちらでも良いが、
+        モーダルウィンドウの動作を決める属性を指定することができる。
+        - data-keyboard="true" にすると Esc キーで閉じられるようになる (デフォルトで true だが)。
+          Firefox や Chrome だと Esc キーが効かないバグがあり、.modal に tabindex="-1" も指定してあげることで回避できる。
+          - 参考：http://www.entereal.co.jp/blog/entry_how-to-dismiss-bootstrap-modal-with-keyboard.html
+        - data-backdrop="false" にすると背景を暗くしないようにし、モーダルウィンドウ外をクリックしても閉じないようにする。
+      - .modal に .fade を書かなければアニメーションをなくせる。
+      - モーダルウィンドウを閉じたいリンクやボタンには data-dismiss="modal" を指定する。
+    -->
+    
+    <div class="container">
+      <!-- ターゲット指定に href 属性を使用。data 属性 (data-keyboard) を呼び出し元のボタンリンクに指定してみた版 -->
+      <p class="text-center"><a data-toggle="modal" href="#myModal1" class="btn btn-info" data-keyboard="true">Open Modal 1</a></p>
+      <div id="myModal1" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">My Modal 1</h2>
+            </div>
+            <div class="modal-body">
+              <p>モーダルウィンドウだよ</p>
+              <ul>
+                <li>「&times;」でも「OK」でも閉じるよ</li>
+                <li>モーダルウィンドウ外をクリックしても閉じるよ</li>
+                <li>Esc キーでも閉じるよ</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-succes" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ターゲット指定に data-target 属性を使用。data 属性 (data-backdrop) を .modal に指定してみた版 -->
+      <p class="text-center"><a data-toggle="modal" data-target="#myModal2" class="btn btn-info">Open Modal 2</a></p>
+      <div id="myModal2" class="modal" data-backdrop="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">My Modal 2</h2>
+            </div>
+            <div class="modal-body">
+              <p>モーダルウィンドウだよ</p>
+              <ul>
+                <li>Fade アニメーションしないよ</li>
+                <li>背景を暗くしないよ</li>
+                <li>モーダルウィンドウ外をクリックしても閉じないよ</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-succes" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
