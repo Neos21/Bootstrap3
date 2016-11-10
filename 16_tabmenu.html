@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Tab Menu</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      body {
+        padding:20px;
+      }
+      
+      /* nav-tabs の枠線と同じ枠線色にし、余白設定をしておく */
+      .my-tab-content {
+        border-width:0 1px 1px;
+        border-style:solid;
+        border-color:#ddd;
+        padding:10px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Tab Menu
+      
+      - .nav-tabs でタブメニューを実装できる。
+      - .active なリスト要素が選択状態になる。
+      - タブ切り替えをしたいリンクには data-toggle="tab" を設定し、切り替えたいタブの id を href 属性に指定する。
+      - .tab-content でタブ切り替えしたいコンテンツを囲んでおく。
+      - タブごとに .tab-pane を作り、id 属性を設定する。
+    -->
+    
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+        <li><a href="#about" data-toggle="tab">About</a></li>
+        <li><a href="#web" data-toggle="tab">Web</a></li>
+      </ul>
+      
+      <div class="tab-content my-tab-content">
+        <div class="tab-pane active" id="home">
+          <h1>ホームです。</h1>
+          <p><code>active</code> にしておくと初期表示で選択されます。</p>
+        </div>
+        <div class="tab-pane" id="about">
+          <p>アバウトです。</p>
+          <p style="margin-top:200px;">少し余白を開けて高さを変えてみる。</p>
+        </div>
+        <div class="tab-pane fade" id="web">
+          <p>ウェブです。</p>
+          <p>フェードします。</p>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    </script>
+    
+  </body>
+</html>
