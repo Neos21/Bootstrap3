@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Bootstrap 3 - Tooltip Popover</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+      body {
+        padding:20px;
+      }
+      
+      /* 強調 */
+      strong {
+        font-size:1.5em;
+        color:red;
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!--
+      Tooltip / Popover
+      
+      - 両方ともフキダシ。スタイルが異なるが、指定できる内容は大体同じ。
+      - data-toggle 属性で "tooltip" か "popover" を指定する。
+        そして jQuery で対象の要素を指定し .tooltip() か .popover() を与えて、初めて作動する。
+        (jQuery も書かないと動作しない)
+      - Popover の場合は data-content 属性で説明ヘッダとボディを分けられる。
+      - data-placement 属性で表示位置を指定できる。
+      - data-html="true" にすると、title 属性や data-content 属性の中に HTML コードが書ける。
+      - data-trigger 属性で、クリックしないと開かない Popover をホバーで開けるようにしたりできる。
+      - placement や trigger は jQuery 側から指定することもできる。
+    -->
+    
+    <div class="container">
+      <p><a href="#" data-toggle="tooltip" title="説明文章です。" data-placement="right">この文字列</a>にはツールチップが設定されています。</p>
+      <p><a href="#" data-toggle="tooltip" title="説明文章です。" id="myTooltip">この文字列</a>には下側に表示されるツールチップが設定されています。</p>
+      <p><a href="#" data-toggle="tooltip" title="説明文章です。<br><strong>改行</strong>します。" data-html="true">この文字列</a>には HTML ソースを含んだツールチップが設定されています。</p>
+      
+      <p><a href="#" data-toggle="popover" title="説明タイトル" data-content="説明詳細です。">この文字列</a>にはポップオーバーが設定されています。</p>
+      <p><a href="#" data-toggle="popover" title="説明タイトル" data-content="<p>説明詳細です。</p><p><strong>ホバーするだけで</strong>表示されましたね。</p>" data-html="true" data-trigger="hover">この文字列</a>にはホバーするだけで表示されるポップオーバーが設定されています。</p>
+    </div>
+    
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $(function() {
+        // Tooltip (サンプル用に :not() を指定)
+        $("[data-toggle='tooltip']:not(#myTooltip)").tooltip();
+        
+        // Tooltip (jQuery から placement を指定する)
+        $("#myTooltip").tooltip({
+          placement: "bottom"
+        });
+        
+        // Popover
+        $("[data-toggle='popover']").popover();
+      });
+    </script>
+    
+  </body>
+</html>
