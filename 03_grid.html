@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       /* 軽くパディング。.container や .col-* には左右 padding が 15px ずつ振ってあるみたい。 */
       #header,
       #body > .row > div,
@@ -15,10 +16,19 @@
         padding-top:5rem;
         padding-bottom:5rem;
       }
+      
     </style>
     
   </head>
   <body>
+    
+    <!--
+      Grid システム：段組
+      
+      - .row の中で、横幅を12分割した .col-* を置いていく。
+      - .container で囲んであげると良い感じに中央揃えにしてくれる。
+      - 「sm」は small の略。デバイス幅に応じたクラスが用意してある。
+    -->
     
     <div id="header" style="background:pink;">
       Header
@@ -44,23 +54,17 @@
     
     <p><input type="button" id="toggle-container" value="Toggle Class"></p>
     
-    <!--
-      Grid システム：段組
-      
-      - .row の中で、横幅を12分割した .col-* を置いていく。
-      - .container で囲んであげると良い感じに中央揃えにしてくれる。
-      - 「sm」は small の略。デバイス幅に応じたクラスが用意してある。
-    -->
-    
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
     <script>
       $(function() {
+        
         // .container を付与したり外したり
         $("#toggle-container").on("click", function() {
           $("#header, #body, #footer").toggleClass("container");
         });
+        
       });
     </script>
     
