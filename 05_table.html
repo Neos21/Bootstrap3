@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       #toggles {
         margin-top:15px;
         margin-bottom:15px;
@@ -16,10 +17,23 @@
       #toggles li:not(:last-child) {
         padding-bottom:5px;
       }
+      
     </style>
     
   </head>
   <body>
+    
+    <!--
+      Table レイアウト
+      
+      - table に .table を付与した状態が通常パターン。
+      - .table-striped で奇数行に色が付く (:nth-child() を使用)。
+      - .table-bordered で枠線。
+      - .table-hover でマウスホバー時に背景色を付ける。
+      - .table-condensed で狭めのテーブルを作れる。
+      - .active・.success・.info・.warning・.danger あたりでテーブルに色を付けられる。
+        .table-hover 時の色も用意されていたりして芸が細かい…。
+    -->
     
     <div class="container" id="toggles">
       <ul>
@@ -58,28 +72,18 @@
       </table>
     </div>
     
-    <!--
-      Table レイアウト
-      
-      - table に .table を付与した状態が通常パターン。
-      - .table-striped で奇数行に色が付く (:nth-child() を使用)。
-      - .table-bordered で枠線。
-      - .table-hover でマウスホバー時に背景色を付ける。
-      - .table-condensed で狭めのテーブルを作れる。
-      - .active・.success・.info・.warning・.danger あたりでテーブルに色を付けられる。
-        .table-hover 時の色も用意されていたりして芸が細かい…。
-    -->
-    
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
     <script>
       $(function() {
+        
         $("#toggle-table")    .on("click", function() { $("#sample").toggleClass("table");           $(this).toggleClass("btn-info btn-success"); });
         $("#toggle-striped")  .on("click", function() { $("#sample").toggleClass("table-striped");   $(this).toggleClass("btn-info btn-success"); });
         $("#toggle-bordered") .on("click", function() { $("#sample").toggleClass("table-bordered");  $(this).toggleClass("btn-info btn-success"); });
         $("#toggle-hover")    .on("click", function() { $("#sample").toggleClass("table-hover");     $(this).toggleClass("btn-info btn-success"); });
         $("#toggle-condensed").on("click", function() { $("#sample").toggleClass("table-condensed"); $(this).toggleClass("btn-info btn-success"); });
+        
       });
     </script>
     
