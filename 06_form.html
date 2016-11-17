@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       /* Bootstrap のクラスを上書きすると分かりづらくなるので本当はやめるべき。別に独自のクラスを付与してそちらで制御するとよろし。 */
       .container:not(:first-child) {
         margin-top:15px;
         border-top:1px solid #999;
         padding-top:15px;
       }
+      
     </style>
     
   </head>
@@ -29,6 +31,7 @@
       - .form-group に .has-warning や .has-error を与えると囲んだフォーム部品に色を付けられる。
       - ちなみに input[type="text"] に .input-sm 付与でテキストボックスが少し小さくなる。
     -->
+    
     <div class="container">
       <form>
         <div class="form-group" id="email-box">
@@ -83,6 +86,7 @@
     
     <script>
       $(function() {
+        
         // 簡易入力チェック
         $("#email").on("blur", function() {
           var val = $(this).val();
@@ -105,6 +109,7 @@
               .addClass("has-error");
           }
         });
+        
       });
     </script>
     
