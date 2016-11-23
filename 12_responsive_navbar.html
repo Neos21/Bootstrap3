@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       .container {
         margin-top:51px;
         margin-bottom:51px;
       }
+      
     </style>
     
   </head>
@@ -28,6 +30,7 @@
       - .collapse で開閉させるメニューのデザインを指定するために .navbar-collapse を併用する。
       - ウィンドウサイズを縮めるとハンバーガーメニューが登場するレスポンシブデザインができた。
     -->
+    
     <nav class="navbar navbar-default navbar-fixed-top" id="nav">
       <div class="navbar-header">
         <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
@@ -66,6 +69,7 @@
     
     <script>
       $(function() {
+        
         // デザインの切替
         $(".toggle-design").on("click", function() {
           $("#nav").toggleClass("navbar-default navbar-inverse")
@@ -75,6 +79,7 @@
         $(".toggle-fixed").on("click", function() {
           $("#nav").toggleClass("navbar-fixed-top navbar-fixed-bottom")
         });
+        
       });
     </script>
     
