@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       /* .progress-bar の transition を無効化するための指定 */
       .my-progress-bar {
         -webkit-transition:none !important;
                 transition:none !important;
       }
+      
     </style>
     
   </head>
@@ -30,6 +32,7 @@
         アニメーションがダブってカクついてしまう。
         - 参考：http://stackoverflow.com/questions/23575095/animating-bootstrap-progress-bar-width-with-jquery
     -->
+    
     <div class="container">
       <div class="progress">
         <div class="progress-bar progress-bar-info" style="width:60%;"></div>
@@ -67,6 +70,7 @@
     
     <script>
       $(function() {
+        
         // 100% にする
         $("#make-complete").on("click", function() {
           $("#progress-bar-1").css({ "width" : "100%" });
@@ -80,6 +84,7 @@
         $("#animate").on("click", function() {
           $("#progress-bar-2").animate({ "width" : "70%" }, 2500);
         });
+        
       });
     </script>
     
