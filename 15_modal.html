@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       body {
         padding:20px;
       }
+      
     </style>
     
   </head>
@@ -31,6 +33,7 @@
     -->
     
     <div class="container">
+      
       <!-- ターゲット指定に href 属性を使用。data 属性 (data-keyboard) を呼び出し元のボタンリンクに指定してみた版 -->
       <p class="text-center"><a data-toggle="modal" href="#myModal1" class="btn btn-info" data-keyboard="true">Open Modal 1</a></p>
       <div id="myModal1" class="modal fade" tabindex="-1">
@@ -78,12 +81,15 @@
           </div>
         </div>
       </div>
+      
     </div>
     
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
     <script>
+      $(function() {
+      });
     </script>
     
   </body>
