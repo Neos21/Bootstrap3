@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
+      
       body {
         padding:20px;
       }
@@ -17,6 +18,7 @@
         font-size:1.5em;
         color:red;
       }
+      
     </style>
     
   </head>
@@ -41,7 +43,7 @@
       <p><a href="#" data-toggle="tooltip" title="説明文章です。" id="myTooltip">この文字列</a>には下側に表示されるツールチップが設定されています。</p>
       <p><a href="#" data-toggle="tooltip" title="説明文章です。<br><strong>改行</strong>します。" data-html="true">この文字列</a>には HTML ソースを含んだツールチップが設定されています。</p>
       
-      <p><a href="#" data-toggle="popover" title="説明タイトル" data-content="説明詳細です。">この文字列</a>にはポップオーバーが設定されています。</p>
+      <p><a href="#" data-toggle="popover" title="説明タイトル" data-content="説明詳細です。">この文字列</a>にはポップオーバーが設定されています。リンクをクリックしてください。</p>
       <p><a href="#" data-toggle="popover" title="説明タイトル" data-content="<p>説明詳細です。</p><p><strong>ホバーするだけで</strong>表示されましたね。</p>" data-html="true" data-trigger="hover">この文字列</a>にはホバーするだけで表示されるポップオーバーが設定されています。</p>
     </div>
     
@@ -50,6 +52,7 @@
     
     <script>
       $(function() {
+        
         // Tooltip (サンプル用に :not() を指定)
         $("[data-toggle='tooltip']:not(#myTooltip)").tooltip();
         
@@ -60,6 +63,7 @@
         
         // Popover
         $("[data-toggle='popover']").popover();
+        
       });
     </script>
     
