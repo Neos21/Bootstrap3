@@ -5,7 +5,7 @@ Bootstrap 3 の練習場です。GitHub Pages からドウゾ → [Testing Boots
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
+[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
 
 
 ## Links
