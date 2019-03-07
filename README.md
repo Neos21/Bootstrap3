@@ -1,6 +1,6 @@
 # Bootstrap 3 Practice
 
-Bootstrap 3 の練習場です。GitHub Pages からドウゾ → [Testing Bootstrap 3](https://neos21.github.io/Bootstrap3/)
+Bootstrap 3 の練習場です。GitHub Pages からドウゾ → __[Testing Bootstrap 3](https://neos21.github.io/Bootstrap3/)__
 
 
 ## Author
@@ -14,5 +14,5 @@ Bootstrap 3 の練習場です。GitHub Pages からドウゾ → [Testing Boots
 - [Corredor](http://neos21.hatenablog.com/)
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
-- [Bit-Archer](http://bit-archer.hatenablog.com/)
+- [Neo's GitHub Pages](https://neos21.github.io/)
 - [GitHub - Neos21](https://github.com/Neos21/)
