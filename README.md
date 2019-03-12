@@ -1,6 +1,6 @@
-# Bootstrap 3 Practice
+# Practice Bootstrap3
 
-Bootstrap 3 の練習場です。GitHub Pages からドウゾ → __[Testing Bootstrap 3](https://neos21.github.io/Bootstrap3/)__
+Bootstrap3 の練習場です。GitHub Pages からドウゾ → __[Practice Bootstrap3](https://neos21.github.io/practice-bootstrap3/)__
 
 
 ## Author
