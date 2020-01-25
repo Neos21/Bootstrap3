@@ -5,7 +5,7 @@ Bootstrap3 の練習場です。GitHub Pages からドウゾ → __[Practice Boo
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
+[Neo](http://neo.s21.xrea.com/)
 
 
 ## Links
